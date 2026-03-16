@@ -33,6 +33,7 @@ export const skills = [
   },
 ];
 
+
 export const experience = [
   {
     company: "Acefone",
@@ -45,7 +46,11 @@ export const experience = [
       "Built a lead analytics dashboard in React with SQL-backed real-time filtering (Failed, Live, Success, Junk) integrating REST APIs and MVC architecture.",
       "Engineered dynamic forms with UTM/GCLID tracking via Google Tag Manager; authored PHP logic for real-time lead syncing into Zoho CRM.",
       "Designed RESTful APIs integrating Zoho CRM, Zoho Desk, and Wotnot; architected an AI Blog Summarization API (LangChain + OpenAI) with caching (~5K req/day) and rate limiting.",
-      "Authored API and security test scripts covering auth bypass, rate-limit enforcement, and input sanitization; used Chrome DevTools for performance profiling.",
+      "Architected the AI Blog Summarization Backend with a configurable Summarizer API (prompt pipelines for length/tone/audience) and Analytics API (usage tracking), backed by SQLAlchemy/SQLite with secret-key auth.",
+      "Integrated the Wotnot live chat widget into the Acefone website, configuring it for seamless embedding and ensuring consistent behavior across all pages and device breakpoints.",
+      "Designed and implemented a Wotnot bot flow for automated lead creation; authored PHP logic to handle real-time lead updation — syncing captured visitor data directly into Zoho CRM without manual intervention.",
+      "Configured and deployed the AI summarizer service on AWS EC2 — handled Linux environment setup, installed dependencies, and configured environment variables for stable production operation.",
+      "Authored API test scripts and security test scripts covering auth bypass, rate-limit enforcement, and input sanitization; used Chrome DevTools for performance profiling and GitHub Copilot to accelerate development.",
       "Developed rapid UI prototypes using Adobe XD for stakeholder review, accelerating design-to-development handoff.",
     ],
   },
@@ -56,9 +61,12 @@ export const experience = [
     period: "Jul 2023 – Aug 2024",
     bullets: [
       "Developed and maintained the company's primary SaaS product website using React and Next.js with SEO-friendly SSR, multilingual (i18n) support, and optimized routing.",
-      "Built and extended a reusable React component library with Material UI, integrating REST APIs and Zustand state management.",
+      "Designed and delivered scalable frontend organic websites and landing pages in React and Next.js with dynamic filtering, sorting, and pagination built from scratch.",
+      "Built and extended a reusable React component library with Material UI, integrating REST APIs and Zustand state management with structured error handling throughout.",
+      "Integrated REST APIs using React Query for data fetching and Zustand for lightweight global state management.",
+      "Implemented virtualization for 10,000+ row datasets, maintaining smooth rendering performance under heavy data loads.",
       "Resolved cross-browser compatibility and cross-form-factor issues; improved performance via code-splitting, dynamic imports, image optimization, and memoization.",
-      "Collaborated with UX designers to uphold design system standards, participated in Agile sprint planning and code reviews via Jira.",
+      "Collaborated with UX designers to uphold design system standards; participated in Agile sprint planning and code reviews via Jira.",
     ],
   },
   {
@@ -68,7 +76,9 @@ export const experience = [
     period: "Oct 2022 – Jun 2023",
     bullets: [
       "Developed Yoda tutor dashboard in React.js with real-time session analytics; applied lazy loading and code splitting to optimize performance across diverse network conditions.",
-      "Translated wireframes into pixel-accurate, cross-browser-compatible React components with consistent behavior across Chrome, Firefox, and Safari.",
+      "Improved initial load performance by 30%+ through strategic code splitting, lazy loading, and dynamic imports, reducing Time to Interactive on low-bandwidth connections.",
+      "Translated wireframes and Figma mockups into pixel-accurate, cross-browser-compatible React components with consistent behavior across Chrome, Firefox, and Safari.",
+      "Collaborated closely with the product team to iterate on UI/UX flows, ensuring consistent cross-browser behavior.",
       "Participated in Agile/Scrum ceremonies, delivering features iteratively and communicating blockers proactively to onshore and offshore teammates.",
     ],
   },
@@ -78,12 +88,14 @@ export const experience = [
     location: "Bihar, India",
     period: "Aug 2021 – Sep 2022",
     bullets: [
-      "Standardized UI components using React, Bootstrap, Tailwind CSS, and Material UI; integrated REST APIs with client-side form validation.",
+      "Standardized UI components using React, Bootstrap, Tailwind CSS, and Material UI; integrated REST APIs with Axios and implemented client-side form validation across student/staff management workflows.",
+      "Built a reusable React component library establishing consistent UI patterns across student and staff management modules.",
       "Gained experience in jQuery-based DOM manipulation, JavaScript client-side scripting, and build tooling (Grunt/Gulp).",
-      "Participated in code reviews and sprint planning, building foundational knowledge of Agile delivery and clean code practices.",
+      "Participated in code reviews and sprint planning under senior engineers, building foundational knowledge of Agile delivery, clean code practices, and end-to-end feature ownership.",
     ],
   },
 ];
+
 
 export const projects = [
   {

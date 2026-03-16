@@ -3,7 +3,7 @@ import { useState } from "react";
 import { projects } from "@/lib/data";
 
 export default function Projects() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
     <section
@@ -55,6 +55,17 @@ export default function Projects() {
           />
         </div>
 
+        <style>{`
+          .project-card:not(.project-card--active):hover {
+            border-color: rgba(200, 98, 42, 0.3) !important;
+            background-color: var(--surface) !important;
+            transform: translateY(-2px);
+          }
+          .project-card:not(.project-card--active):hover .project-tap-hint {
+            opacity: 1;
+          }
+        `}</style>
+
         <div
           style={{
             display: "flex",
@@ -69,8 +80,8 @@ export default function Projects() {
             return (
               <div
                 key={project.title}
-                onMouseEnter={() => setActiveIndex(i)}
-                onMouseLeave={() => setActiveIndex(null)}
+                onClick={() => setActiveIndex(isActive ? null : i)}
+                className={`project-card${isActive ? " project-card--active" : ""}`}
                 style={{
                   width: isActive ? "340px" : "200px",
                   backgroundColor: isActive ? "var(--surface)" : "var(--bg)",
@@ -116,6 +127,24 @@ export default function Projects() {
                   }}
                 >
                   {project.title}
+                </p>
+
+                {/* Tap hint — visible on hover when collapsed */}
+                <p
+                  className="project-tap-hint"
+                  style={{
+                    fontSize: "0.65rem",
+                    color: "var(--accent)",
+                    opacity: 0,
+                    margin: isActive ? "0" : "0.35rem 0 0",
+                    height: isActive ? "0" : "auto",
+                    overflow: "hidden",
+                    transition: "opacity 0.2s ease",
+                    letterSpacing: "0.04em",
+                    fontWeight: 500,
+                  }}
+                >
+                  Click to expand ↓
                 </p>
 
                 <div
@@ -197,6 +226,7 @@ export default function Projects() {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
                           style={{
                             fontSize: "0.78rem",
                             color: "var(--text-secondary)",
@@ -228,6 +258,7 @@ export default function Projects() {
                           href={project.live}
                           target="_blank"
                           rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
                           style={{
                             fontSize: "0.78rem",
                             color: "#fff",
